@@ -5,6 +5,7 @@
     padding: 80px 60px;
     background-color: #fff;
     align-items: center;
+    
   }
   
   .hero-content {
@@ -55,3 +56,28 @@
     margin-right: 130px;
   }
   
+  @media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 0; /* Remove the margin in smaller screens */
+    }
+
+    .hero-content h2,
+    .hero-content p,
+    button {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .hero-image img {
+        margin-right: 0;
+        width: 100%;
+    }
+}
