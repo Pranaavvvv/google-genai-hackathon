@@ -32,6 +32,7 @@
   background: #fff;
   padding: 40px 25px; 
   border-radius: 12px;
+  box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.1);
 
 }
@@ -141,22 +142,47 @@
   color: #0b0217;
 }
 
-.button10 {
-  background: #7d2ae8;
-  margin-top: 30px; 
+.button10, .button20,.link-button2 {
+  background: #7d2ae8; /* Purple for Login Now button */
+  margin-top: 40px;
+  padding: 10px 20px; /* Adjust padding to give more spacing */
   border-radius: 10px;
   color: white;
   font-weight: 600;
   cursor: pointer;
+  text-align: center;
+  display: block;
+  box-sizing: border-box; 
+  max-width: 200px; 
+  margin-left: auto;
+  margin-right: auto; 
 }
-
-
+.button20{
+  background: #4CAF50;
+}
+.link-button2{
+  margin-top: 20px;
+}
+.link-button1{
+  background: #4CAF50;
+  margin-top: 20px;
+  padding: 10px 20px; 
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  box-sizing: border-box; 
+  max-width: 200px; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
 .form_container .button:hover {
   background: #5c1fbf; 
 }
-
 .login_signup {
   font-size: 12px;
   text-align: center;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
