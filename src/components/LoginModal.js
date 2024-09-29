@@ -30,7 +30,7 @@ function LoginModal({ onClose, onLoginSuccess }) {
             </div>
             <button className="button10" onClick={handleLogin}>Login Now</button>
             <div className="login_signup">
-              Don't have an account? <button onClick={switchToSignup} className="link-button">Signup</button>
+              Don't have an account? <button onClick={switchToSignup} className="link-button1">Signup</button>
             </div>
           </div>
         ) : (
@@ -50,7 +50,7 @@ function LoginModal({ onClose, onLoginSuccess }) {
             </div>
             <button className="button20" onClick={handleLogin}>Signup Now</button>
             <div className="login_signup">
-              Already have an account? <button onClick={switchToLogin} className="link-button">Login</button>
+              Already have an account? <button onClick={switchToLogin} className="link-button2">Login</button>
             </div>
           </div>
         )}
