@@ -24,8 +24,8 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 15px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 180px; 
+  padding-right: 180px;
 }
 
 .App-header .logo {
