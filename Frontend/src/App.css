@@ -151,3 +151,12 @@ body {
     margin: 10px 0; /* Space between feature items */
   }
 }
+.logo-container {
+  display: flex;
+  align-items: center; /* Center vertically */
+}
+
+.logo-container img {
+  width: 40px; /* Adjust size as needed */
+  margin-right: 8px; /* Space between logo and text */
+}

@@ -111,9 +111,13 @@ body, html {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background-color: #f0f4f9;
+  background-color: #f0f4f9; /* Ensure this matches your design */
   padding: 10px 20px;
-  border-radius: 50px;
+  border-radius: 50px; /* Keeps rounded corners */
+  box-shadow: none; /* Remove shadow if present */
+  border: none; /* Remove the border */
+  outline: none; /* Remove focus outline */
+  margin: 10px 0; /* Maintain spacing */
 }
 
 .search-box img {
@@ -244,45 +248,43 @@ body, html {
 }
 
 .chat-history {
-  overflow-y: visible; /* Remove scrollbar from chat history */
-  margin-bottom: 20px;
-  padding: 10px;
+  overflow-y: auto; /* Allow scrolling if necessary */
+  margin-bottom: 20px; /* This could be reduced if not needed */
+  padding: 10px; /* Ensure padding is not too much */
   background-color: transparent;
+  max-height: 300px; /* Set a max-height to avoid excessive growth */
 }
 
 .message {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 5px; /* Space between messages */
+  padding: 8px 12px; /* Reduce horizontal padding */
   border-radius: 5px;
-  max-width: 70%;
-  background-color: transparent;
+  max-width: 70%; /* Keeps the message within a reasonable width */
+  background-color: transparent; /* Adjust as needed */
+  word-wrap: break-word; /* Allows long words to wrap */
+  overflow-wrap: break-word; /* Break long words that can't fit */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow for visibility */
 }
 
 .message.ai {
   justify-content: flex-start;
-  background-color: #f0f4f9;
+  background-color: #f0f4f9; /* Subtle background for AI messages */
+  align-self: flex-start; /* Align AI messages to start */
 }
 
 .message.user {
   justify-content: flex-end;
-  margin-left: auto;
-  background-color: #e3f2fd;
+  margin-left: auto; /* Align user messages to the end */
+  background-color: #e3f2fd; /* Background for user messages */
+  align-self: flex-end; /* Align user messages to end */
 }
 
-.message img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-left: 10px;
-}
 
-.message.ai img {
-  order: -1;
-  margin-right: 10px;
-}
 
-.message.user img {
-  margin-left: 10px;
+.message p {
+  margin: 0; /* Remove default margin for paragraphs */
+  max-width: 100%; /* Ensure paragraph can use full width */
+  word-wrap: break-word; /* Allow text to wrap */
 }

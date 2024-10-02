@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Typewriter from "react-typewriter";
 import "./Main.css";
 import { assets } from "../assets/assets";
 
@@ -26,18 +27,24 @@ const Main = () => {
       // Add user message to chat history
       setChatHistory(prevHistory => [...prevHistory, { type: 'user', content: userMessage }]);
 
-      const response = await axios.post('http://localhost:5555/api/chat', {
+      const response = await axios.post('https://your-backend.onrender.com/api/chat', { // Update this to your backend URL
         moodValue: moodValue,
         userMessage: userMessage
       });
 
       // Add AI response to chat history
-      setChatHistory(prevHistory => [...prevHistory, { type: 'ai', content: response.data.response }]);
+      setChatHistory(prevHistory => [
+        ...prevHistory,
+        { type: 'ai', content: response.data.response }
+      ]);
 
       setUserMessage(""); // Clear input after sending
     } catch (error) {
       console.error("Error sending message:", error);
-      setChatHistory(prevHistory => [...prevHistory, { type: 'error', content: "Sorry, there was an error processing your message. Please try again." }]);
+      setChatHistory(prevHistory => [
+        ...prevHistory,
+        { type: 'error', content: "Sorry, there was an error processing your message. Please try again." }
+      ]);
     } finally {
       setIsLoading(false);
     }
@@ -47,9 +54,7 @@ const Main = () => {
     <div className="Main">
       <div className="main-container">
         <div className="greet">
-          <p>
-            <span>Hello</span>
-          </p>
+          <p><span>Hello</span></p>
           <p>How are you feeling Today?</p>
         </div>
 
@@ -75,8 +80,14 @@ const Main = () => {
         <div className="chat-history">
           {chatHistory.map((message, index) => (
             <div key={index} className={`message ${message.type}`}>
-              <p>{message.content}</p>
-            </div>
+              {message.type === 'ai' ? (
+                <Typewriter typing={1.9}>
+                  {message.content}
+                </Typewriter>
+              ) : (
+                <p>{message.content}</p>
+              )}
+            </div> 
           ))}
         </div>
 
@@ -101,8 +112,7 @@ const Main = () => {
             </div>
           </div>
           <p className="bottom-info">
-            Gemini may display inaccurate information including about people so
-            please double check its responses. Your privacy and Gemini Apps
+            Gemini may display inaccurate information including about people so please double check its responses. Your privacy and Gemini Apps
           </p>
         </div>
       </div>

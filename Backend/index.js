@@ -6,8 +6,14 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// CORS Configuration
+const corsOptions = {
+  origin: 'https://google-genai-hackathon.vercel.app/', // Update this to your frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());   
 
 // Initialize Google AI
@@ -59,8 +65,7 @@ app.post('/api/chat', async (req, res) => {
     
     5. **Conversational Tone**: Maintain a warm and inviting tone throughout your response. Encourage further dialogue by posing open-ended questions that invite the user to share more about their feelings or experiences, or suggest helpful resources that might assist them.
     
-    6. **Comprehensive Structure**: Ensure your response is thorough wehre needed like if you can give in one line or word give that but if require give some response encompassing 3-5 paragraphs. Each paragraph should flow logically, connecting the user's emotional state to thoughtful insights and suggestions. Remember to focus on emotional nuance and provide a response that is genuinely supportive and encouraging, without relying on mood metrics.`;
-    
+    6. **Comprehensive Structure**: Ensure your response is thorough where needed like if you can give in one line or word give that but if require give some response encompassing 3-5 paragraphs. Each paragraph should flow logically, connecting the user's emotional state to thoughtful insights and suggestions. Remember to focus on emotional nuance and provide a response that is genuinely supportive and encouraging, without relying on mood metrics.`;
 
     const chatResult = await model.generateContent(chatPrompt);
     const aiResponse = chatResult.response.text();
@@ -73,73 +78,72 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
- 
+// Initialize Mood Ranges
 async function initializeMoodRanges() {
-  try {
-    const count = await MoodRange.countDocuments();
-    if (count === 0) {
-      const defaultRanges = [
-        {
-          min: 40,
-          max: 51,
-          prompt: "The user is feeling extremely positive, enthusiastic, and optimistic. They likely feel energized and ready to take on challenges."
-        },
-        {
-          min: 30,
-          max: 40,
-          prompt: "The user is in a very good mood, feeling confident and optimistic about their circumstances."
-        },
-        {
-          min: 20,
-          max: 30,
-          prompt: "The user is feeling quite good, generally positive, and content with their current situation."
-        },
-        {
-          min: 10,
-          max: 20,
-          prompt: "The user is in a slightly positive mood, feeling generally okay but may have some minor concerns."
-        },
-        {
-          min: 0,
-          max: 10,
-          prompt: "The user is feeling neutral to slightly positive, generally balanced but may be experiencing some uncertainty."
-        },
-        {
-          min: -10,
-          max: 0,
-          prompt: "The user is feeling neutral to slightly negative, possibly experiencing some mild stress or concern."
-        },
-        {
-          min: -20,
-          max: -10,
-          prompt: "The user is feeling somewhat down or upset, likely facing some challenges or disappointments."
-        },
-        {
-          min: -30,
-          max: -20,
-          prompt: "The user is feeling quite negative or distressed, possibly dealing with significant difficulties or emotional pain."
-        },
-        {
-          min: -40,
-          max: -30,
-          prompt: "The user is feeling very negative or troubled, likely experiencing serious problems or emotional distress."
-        },
-        {
-          min: -51,
-          max: -40,
-          prompt: "The user is feeling extremely negative or in severe distress, potentially facing a crisis or overwhelming challenges."
-        }
-      ];
-
-      await MoodRange.insertMany(defaultRanges);
-      console.log('Default mood ranges initialized');
-    }
+    try {
+      const count = await MoodRange.countDocuments();
+      if (count === 0) {
+        const defaultRanges = [
+          {
+            min: 40,
+            max: 51,
+            prompt: "The user is feeling extremely positive, enthusiastic, and optimistic. They likely feel energized and ready to take on challenges."
+          },
+          {
+            min: 30,
+            max: 40,
+            prompt: "The user is in a very good mood, feeling confident and optimistic about their circumstances."
+          },
+          {
+            min: 20,
+            max: 30,
+            prompt: "The user is feeling quite good, generally positive, and content with their current situation."
+          },
+          {
+            min: 10,
+            max: 20,
+            prompt: "The user is in a slightly positive mood, feeling generally okay but may have some minor concerns."
+          },
+          {
+            min: 0,
+            max: 10,
+            prompt: "The user is feeling neutral to slightly positive, generally balanced but may be experiencing some uncertainty."
+          },
+          {
+            min: -10,
+            max: 0,
+            prompt: "The user is feeling neutral to slightly negative, possibly experiencing some mild stress or concern."
+          },
+          {
+            min: -20,
+            max: -10,
+            prompt: "The user is feeling somewhat down or upset, likely facing some challenges or disappointments."
+          },
+          {
+            min: -30,
+            max: -20,
+            prompt: "The user is feeling quite negative or distressed, possibly dealing with significant difficulties or emotional pain."
+          },
+          {
+            min: -40,
+            max: -30,
+            prompt: "The user is feeling very negative or troubled, likely experiencing serious problems or emotional distress."
+          },
+          {
+            min: -51,
+            max: -40,
+            prompt: "The user is feeling extremely negative or in severe distress, potentially facing a crisis or overwhelming challenges."
+          }
+        ];
+  
+        await MoodRange.insertMany(defaultRanges);
+        console.log('Default mood ranges initialized');
+      }
   } catch (error) {
     console.error('Error initializing mood ranges:', error);
   }
 }
 
- 
 initializeMoodRanges();
 
 const PORT = process.env.PORT || 5555;
