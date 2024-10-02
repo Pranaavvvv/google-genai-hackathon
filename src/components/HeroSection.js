@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import LoginModal from './LoginModal';  
+import React from 'react';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import './HeroSection.css';
 
-import './HeroSection.css';  
+const HeroSection = ({ openModal }) => {
+  const navigate = useNavigate();  // Initialize navigate
 
-const HeroSection = () => {
-  const [showModal, setShowModal] = useState(false);
-
-  const openModal = () => setShowModal(true);
-  const closeModal = () => setShowModal(false);
+  const handleGetStarted = () => {
+    navigate('/main');  // Navigate to the Main.js component (chatbot)
+  };
 
   return (
     <section className="hero-section">
@@ -16,18 +16,14 @@ const HeroSection = () => {
         <p>
           Discover Nirvana, your AI-powered virtual assistant for mental health. Experience compassionate conversations tailored to your needs, helping students navigate emotional challenges with care and understanding.
         </p>
-        <button onClick={openModal}>Get Started</button> 
+        <button onClick={handleGetStarted}>Get Started</button>  {/* Redirect to /main */}
       </div>
 
       <div className="hero-image">
         <img src="hero-image.jpg" alt="Support your mental health" />
       </div>
-
-      {showModal && (
-        <LoginModal onClose={closeModal} onLoginSuccess={closeModal} />
-      )}
     </section>
   );
-}
+};
 
 export default HeroSection;

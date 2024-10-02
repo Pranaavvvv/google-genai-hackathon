@@ -1,0 +1,46 @@
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px; /* Adjust width as needed */
+    cursor: pointer;
+}
+
+.label {
+    font-size: 16px;
+    color: #333; /* Light text color */
+}
+
+.slider {
+    position: relative;
+    width: 80px; /* Width of the slider */
+    height: 30px; /* Height of the slider */
+    background: #e0e0e0; /* Light background color */
+    border-radius: 15px; /* Rounded corners */
+    margin: 0 10px; /* Space between labels */
+    transition: background 0.3s; /* Smooth transition */
+}
+
+.slider-thumb {
+    position: absolute;
+    width: 28px; /* Width of the slider thumb */
+    height: 28px; /* Height of the slider thumb */
+    background: white; /* Thumb color */
+    border-radius: 50%; /* Round thumb */
+    top: 1px; /* Center vertically */
+    left: 1px; /* Start position */
+    transition: left 0.3s; /* Smooth transition */
+}
+
+/* Change the thumb position and background color when dark mode is active */
+.slider-thumb.dark {
+    left: calc(100% - 28px); /* Move to the right */
+}
+
+.dark-mode .slider {
+    background: #666; /* Dark background color */
+}
+
+.dark-mode .label {
+    color: #fff; /* Dark mode label color */
+}
