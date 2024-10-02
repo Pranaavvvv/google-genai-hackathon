@@ -1,0 +1,48 @@
+.container1 {
+    background-color: #111; /* Black background */
+    color: white; /* White text */
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .title1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+  
+  .steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .step-number {
+    font-size: 1.5rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .step-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .step-description {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  

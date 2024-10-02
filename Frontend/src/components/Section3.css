@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+
+
+.container {
+    width: 100%;
+    margin: 0 auto; 
+    background-color: #f5f7f0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 20px; 
+    color:black;
+}
+
+
+.header .sub-header {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 80px; 
+    font-size: 2em;
+}
+
+.header h2, .header h3, .header h4, .header h5, .header h6 {
+    margin: 0 78px; 
+}
+
+.header h2 {
+    font-family: 'Brush Script MT', cursive;
+   
+}
+
+.header h3 {
+    font-family: 'Merriweather', serif; 
+    font-weight: 700; 
+    
+}
+
+.header h4 {
+    font-family: 'Dancing Script', cursive; 
+    font-size: 2rem; 
+    
+}
+
+.header h5 {
+    font-family: 'Merriweather', serif; 
+    font-weight: 700; 
+    
+}
+
+.header h6 {
+    font-family: 'Lora', serif; 
+    font-weight: 700;
+    
+}
+
