@@ -27,7 +27,7 @@ const Main = () => {
       // Add user message to chat history
       setChatHistory(prevHistory => [...prevHistory, { type: 'user', content: userMessage }]);
 
-      const response = await axios.post('https://your-backend.onrender.com/api/chat', { // Update this to your backend URL
+      const response = await axios.post('https://nirvana-ai.onrender.com/', { // Update this to your backend URL
         moodValue: moodValue,
         userMessage: userMessage
       });
