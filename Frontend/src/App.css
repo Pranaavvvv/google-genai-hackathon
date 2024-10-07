@@ -74,7 +74,7 @@ body {
 .title {
   text-align: left;
   font-size: 3rem;
-  padding-left: 20px; /* Adjust padding for responsiveness */
+  padding-left: 120px; 
   font-weight: bold;
   font-family: "Poppins", sans-serif;
 }
