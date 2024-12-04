@@ -9,7 +9,7 @@ const Working = () => {
         <div className="step">
           <div className="step-number">01</div>
           <h3 className="step-title">Start Your Journey with Us</h3>
-          <p className="step-description">Sign up for an account.</p>
+          <p className="step-description"></p>
         </div>
         <div className="step">
           <div className="step-number">02</div>
