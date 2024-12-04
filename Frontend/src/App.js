@@ -4,7 +4,6 @@ import "./App.css";
 import HeroSection from "./components/HeroSection";
 import Main from "./components/Main"; // Import Main.js
 import LoginModal from "./components/LoginModal"; // Import LoginModal
-import Section3 from "./components/Section3"; // Assuming you have this section
 import FeaturesSection from "./components/FeaturesSection"; // Assuming you have this section
 import Working from "./components/Working"; // Assuming you have this section
 import MentalWellnessForm from "./components/MentalWellnessForm"; // Assuming you have this section
@@ -62,7 +61,6 @@ function App() {
             element={
               <>
                 <HeroSection openModal={openModal} />
-                <Section3 id="section3" />
                 <FeaturesSection />
                 <Working />
                 <MentalWellnessForm />
