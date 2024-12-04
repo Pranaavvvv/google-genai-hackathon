@@ -1,70 +1,70 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Poppins:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Good+Feeling+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora:wght@400;700&family=Merriweather:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Good+Feeling+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora:wght@400;700&family=Merriweather:wght@400;700&display=swap');
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffffff;
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  background-color: #f9faf4;
 }
 
 .App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  text-align: center;
+  max-width: 1600px; /* Keep the max-width */
+  margin: 0 auto; /* Center the section */
 }
 
 .App-header {
-  background-color: #ffffff;
-  padding: 20px; /* Use relative units */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 15px;
+  background-color: #ffffff; 
   padding-left: 180px; 
-  padding-right: 180px;
+  padding-right: 200px; 
+  display: flex;
+  margin-top: 33px;
+  justify-content: space-between; 
+  align-items: center; 
+  font-size: 15px;
 }
 
 .App-header .logo {
   display: flex;
-  align-items: center;
+  align-items: center; 
 }
 
 .App-header .logo-icon {
-  font-size: 24px;
-  margin-right: 10px;
+  font-size: 24px; 
+  margin-right: 10px; 
 }
 
 .App-header .logo-text {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 24px; 
+  font-weight: bold; 
 }
 
 .App-header ul {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  gap: 30px;
+  list-style: none; 
+  display: flex; 
+  padding: 0; 
+  margin: 0; 
+  gap: 30px; 
 }
 
 .App-header ul li {
-  display: inline;
+  display: inline; 
 }
 
 .App-header ul li a {
-  text-decoration: none;
-  color: #555;
-  font-size: 18px;
-  transition: color 0.3s;
+  text-decoration: none; 
+  color: #555; 
+  font-size: 18px; 
+  transition: color 0.3s; 
 }
 
 .App-header ul li a:hover {
-  color: #007bff;
+  color: #007bff; 
 }
+
 
 .features-section1 {
   display: flex;
@@ -74,19 +74,20 @@ body {
 .title {
   text-align: left;
   font-size: 3rem;
-  padding-left: 420px; 
+  padding-left: 200px;  
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .description {
   text-align: right;
   font-size: 1.5rem;
-  padding-right: 20px; /* Adjust padding for responsiveness */
-  padding-left: 20px; /* Adjust padding for responsiveness */
-  font-family: "Lora", serif;
+  padding-right: 220px; 
+  padding-left: 300px;
+  font-family: 'Lora', serif; 
   font-weight: 500;
-  margin-top: 60px;
+  margin-top: 60px; 
 }
 
 .features {
@@ -97,41 +98,28 @@ body {
 
 .feature {
   text-align: center;
-  max-width: 300px;
 }
 
 .feature h4 {
   font-size: 1.5rem;
 }
 
-.features {
+.features{
   background-color: #f9faf4;
 }
 
-.features-image {
-  max-width: 80%;
-  border-radius: 10px;
+.features-image {  
+  width: 100%; /* Ensures the image scales with the container width */
+  max-width: 1000px; /* Optional: Maximum width if you want to constrain it */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px; 
 }
-
-.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-.dark-mode header {
-  background-color: #1f1f1f;
-}
-
-.dark-mode body {
-  background-color: #1f1f1f;
-  color: #ffffff;
-}
-
 
 @media (max-width: 768px) {
   .App-header {
     flex-direction: column; /* Stack header items on smaller screens */
-    align-items: flex-start;
+    align-items: center; /* Center-align items */
+    padding: 10px 20px; /* Reduce padding for mobile */
   }
 
   .title {
@@ -151,6 +139,7 @@ body {
     margin: 10px 0; /* Space between feature items */
   }
 }
+
 .logo-container {
   display: flex;
   align-items: center; /* Center vertically */
