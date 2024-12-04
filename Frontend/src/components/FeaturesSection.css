@@ -1,0 +1,147 @@
+.features-section {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px; /* Increased padding for better spacing */
+    background-color: #faf9f6; /* Matches the beige background */
+    overflow: hidden; /* Prevents any content from overflowing */
+  }
+  
+  .top-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the top image */
+    margin-bottom: 50px; /* Space between top image and content below */
+  }
+  
+  .top-image {
+    width: 100%;
+    max-width: 1200px; /* You can adjust this size as needed */
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+    object-fit: cover; /* Ensure image covers its container without stretching */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .top-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  /* Features Content */
+  .features-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px; /* Increased space between image and text */
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+  }
+  
+  .features-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .features-image-container:hover {
+    transform: scale(1.05); /* Slight zoom effect for image container */
+  }
+  
+  .features-image {
+    width: 100%;
+    max-width: 450px; /* Increased max-width for a better proportion */
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+    object-fit: cover; /* Ensure image covers its container without stretching */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .features-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .features-text-container {
+    flex: 1;
+    text-align: left;
+    max-width: 650px; /* Increased max-width for better layout */
+    padding: 20px;
+    background-color: #fff; /* White background for text area */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Shadow for text area */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .features-text-container:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+  }
+  
+  .features-heading {
+    font-size: 2.2rem; /* Increased font size for heading */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px; /* Space between heading and description */
+    letter-spacing: 1px; /* Slight spacing between letters for emphasis */
+  }
+  
+  .key-highlight {
+    background-color: #ffe0d3;
+    padding: 6px 10px; /* Added padding for a bigger highlight */
+    border-radius: 8px; /* Rounded corners for highlight */
+    color: #e76f51; /* Red-orange for emphasis */
+    font-weight: bold; /* Bold text for better contrast */
+  }
+  
+  .features-description {
+    font-size: 1.2rem; /* Slightly larger text for better readability */
+    line-height: 1.8;
+    color: #555;
+    margin-top: 20px;
+    text-align: justify; /* Justified text for a cleaner look */
+  }
+  
+  .features-description:first-of-type {
+    margin-top: 0; /* Remove margin for the first paragraph */
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .features-container {
+      flex-direction: column; /* Stack the image and text vertically on small screens */
+      gap: 40px; /* Adjust the gap between image and text on small screens */
+    }
+  
+    .features-image {
+      max-width: 100%; /* Ensure image scales to fit screen width */
+    }
+  
+    .features-text-container {
+      max-width: 100%; /* Allow text container to take up full width */
+      padding: 20px;
+    }
+  
+    .features-heading {
+      font-size: 1.8rem; /* Reduce heading size on mobile */
+    }
+  
+    .features-description {
+      font-size: 1rem; /* Smaller font for mobile */
+    }
+  }
+  
+  /* Animation for smoother page load */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .features-section {
+    animation: fadeIn 1s ease-in-out; /* Add fade-in effect */
+  }
+  
