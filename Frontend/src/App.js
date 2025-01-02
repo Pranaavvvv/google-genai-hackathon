@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"; // Importing Link for navigation
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"; 
 import "./App.css";
 import HeroSection from "./components/HeroSection";
 import Main from "./components/Main"; // Import Main.js
